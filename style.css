@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+/* Pretendard 폰트 불러오기 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+body, h1, h2, h3, p, ol, ul { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    word-break: keep-all;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+    color: #111;
+    background-color: #fff;
+}
+
+/* 전체 콘텐츠 넓이 제한 (스크린샷 비율에 맞춰 1100px로 설정) */
+.contents {
+    width: 1300px;
+    margin: 0 auto;
+    padding: 60px 0 100px 0; /* 위아래 여백 */
+}
+
+/* 1. 상단 헤더 영역 */
+.header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px; /* 타이틀과 검색창 사이의 간격 */
+}
+
+.title-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 메인 큰 일본어 박스 */
+.title-box {
+    width: 660px;
+    height: 160px;
+    border: 1px solid #999;
+    /* 배경 패턴이 글자를 가리지 않도록 흰색 불투명 배경 추가 */
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-box h1 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-right: -0.3em; /* letter-spacing 때문에 우측으로 쏠리는 현상 보정 */
+}
+
+/* 한국어 발음 박스 컨테이너 */
+.reading {
+    position: absolute;
+    /* 박스 높이(48px)의 절반만큼 아래로 내려서 선에 딱 걸치게 만듦 */
+    bottom: -30px; 
+    display: flex;
+    gap: 75px; /* 글자 사이 간격 넓게 조절 */
+}
+
+/* 개별 발음 박스 */
+.reading span {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #999;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* 2. 검색창 영역 */
+.search-area {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    margin-bottom: 40px;
+}
+
+.search-box {
+    width: 320px;
+    height: 48px;
+    border: 1px solid #777;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #fff;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: "Pretendard", sans-serif;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. 스시 리스트 (CSS Grid 사용) */
+.sushi-grid {
+    display: grid;
+    /* repeat(6, 1fr)로 변경하여 정밀하게 6분할 */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px 20px; /* 줄간격 50px, 아이템 간격 20px */
+}
+
+/* 개별 아이템 디자인 */
+.sushi-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 이미지 들어가는 정사각형 박스 */
+.sushi-item .img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 완벽한 정사각형 비율 유지 */
+    border: 1px solid #999;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.sushi-item .img-box img {
+    width: 100%; /* 박스 안에서 이미지가 적당히 여백을 갖도록 */
+    height: auto;
+    object-fit: contain;
+}
+
+/* 작은 한국어 설명 (ex: 보탄새우) */
+.sushi-item .sub-name {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: 200;
+}
+
+/* 큰 일본어/한자 이름 */
+.sushi-item .jp-name {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem; /* 6열 배치에 어울리도록 폰트 크기 살짝 최적화 */
+    font-weight: 500;
+    color: #111;
+}
