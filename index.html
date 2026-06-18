@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스시도감</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="nav-brand" href="#top">すし図鑑</a>
+            <ul class="nav-menu">
+                <li><a href="#cat-akami" data-ko="붉은살" aria-label="붉은살">赤身</a></li>
+                <li><a href="#cat-shiromi" data-ko="흰살" aria-label="흰살">白身</a></li>
+                <li><a href="#cat-hikari" data-ko="등푸른생선" aria-label="등푸른생선">光り物</a></li>
+                <li><a href="#cat-ebi" data-ko="새우" aria-label="새우">海老</a></li>
+                <li><a href="#cat-kai" data-ko="조개류" aria-label="조개류">貝類</a></li>
+                <li><a href="#cat-nantai" data-ko="연체동물" aria-label="연체동물">軟体動物</a></li>
+                <li><a href="#cat-gyoran" data-ko="알" aria-label="알">魚卵・白子</a></li>
+                <li><a href="#cat-sonota" data-ko="기타" aria-label="기타">その他</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contents" id="top">
+        
+        <header class="header">
+            <div class="title-wrap">
+                <div class="title-box">
+                    <h1>すし図鑑</h1>
+                </div>
+                <div class="reading">
+                    <span>스</span>
+                    <span>시</span>
+                    <span>도</span>
+                    <span>감</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-area">
+            <div class="search-box">
+                <input type="text" placeholder="스시 이름을 검색하세요" aria-label="스시 검색">
+                <button type="button">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <main class="sushi-grid">
+
+<!-- 붉은살 -->
+            <div class="grid-category" id="cat-akami">
+                <h2>赤身 <span>붉은살</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/tyuutoro.png" alt="츄토로">
+                </div>
+                <p class="sub-name">츄토로(참치 뱃살)</p>
+                <h2 class="jp-name">中とろ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/ootoro.png" alt="오토로">
+                </div>
+                <p class="sub-name">오토로(참치 뱃살)</p>
+                <h2 class="jp-name">大とろ</h2>
+            </div>
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/akami.png" alt="아카미">
+                </div>
+                <p class="sub-name">아카미(참치 등살)</p>
+                <h2 class="jp-name">赤み</h2>
+            </div>
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/mebati.png" alt="눈다랑어">
+                </div>
+                <p class="sub-name">눈다랑어</p>
+                <h2 class="jp-name">メバチマグロ</h2>
+            </div>
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/kihadamaguro.png" alt="황다랑어">
+                </div>
+                <p class="sub-name">황다랑어</p>
+                <h2 class="jp-name">キハダマグロ</h2>
+            </div>
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/negitoro.png" alt="네기토로">
+                </div>
+                <p class="sub-name">네기토로</p>
+                <h2 class="jp-name">ネギトロ</h2>
+            </div>            
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/katuo.png" alt="카츠오">
+                </div>
+                <p class="sub-name">카츠오</p>
+                <h2 class="jp-name">カツオ</h2>
+            </div> 
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/makajiki.png" alt="청새치">
+                </div>
+                <p class="sub-name">청새치</p>
+                <h2 class="jp-name">マカジキ</h2>
+            </div> 
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/mekajiki.png" alt="황새치">
+                </div>
+                <p class="sub-name">황새치</p>
+                <h2 class="jp-name">メカジキ</h2>
+            </div> 
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/saamon.png" alt="연어">
+                </div>
+                <p class="sub-name">연어</p>
+                <h2 class="jp-name">サーモン</h2>
+            </div> 
+
+             <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/masu.png" alt="송어">
+                </div>
+                <p class="sub-name">송어</p>
+                <h2 class="jp-name">鱒</h2>
+            </div>             
+
+<!-- 흰살 -->
+            <div class="grid-category" id="cat-shiromi">
+                <h2>白身 <span>흰살</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/hirame.png" alt="광어">
+                </div>
+                <p class="sub-name">광어</p>
+                <h2 class="jp-name">平目</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/hosigarei.png" alt="범가자미">
+                </div>
+                <p class="sub-name">범가자미</p>
+                <h2 class="jp-name">ホシガレイ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/matukawakarei.png" alt="노랑가자미">
+                </div>
+                <p class="sub-name">노랑가자미</p>
+                <h2 class="jp-name">マツカワカレイ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/samegarei.png" alt="줄가자미">
+                </div>
+                <p class="sub-name">줄가자미</p>
+                <h2 class="jp-name">サメガレイ</h2>
+            </div> 
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/madai.png" alt="참돔">
+                </div>
+                <p class="sub-name">참돔</p>
+                <h2 class="jp-name">マダイ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/isidai.png" alt="돌돔">
+                </div>
+                <p class="sub-name">돌돔</p>
+                <h2 class="jp-name">イシダイ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/kinmedai.png" alt="금눈돔">
+                </div>
+                <p class="sub-name">금눈돔</p>
+                <h2 class="jp-name">キンメダイ</h2>
+            </div>
+
+<!-- 등푸른생선 -->
+            <div class="grid-category" id="cat-hikari">
+                <h2>光り物 <span>등푸른생선</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/aji.png" alt="전갱이">
+                </div>
+                <p class="sub-name">전갱이</p>
+                <h2 class="jp-name">あじ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/saba.png" alt="고등어">
+                </div>
+                <p class="sub-name">고등어</p>
+                <h2 class="jp-name">鯖</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/sanma.png" alt="꽁치">
+                </div>
+                <p class="sub-name">꽁치</p>
+                <h2 class="jp-name">サンマ</h2>
+            </div>
+
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/kohada.png" alt="전어">
+                </div>
+                <p class="sub-name">전어</p>
+                <h2 class="jp-name">小肌</h2>
+            </div>
+
+<!-- 새우 -->
+            <div class="grid-category" id="cat-ebi">
+                <h2>海老 <span>새우</span></h2>
+            </div>          
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/botanebi.png" alt="보탄새우">
+                </div>
+                <p class="sub-name">보탄새우</p>
+                <h2 class="jp-name">牡丹海老</h2>
+            </div>
+
+            <div class="sushi-item is-clickable" id="item-amaebi" role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="img-box">
+                    <img src="images/amaebi.png" alt="단새우">
+                </div>
+                <p class="sub-name">단새우</p>
+                <h2 class="jp-name">甘海老</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/kurumaebi.png" alt="차새우">
+                </div>
+                <p class="sub-name">보리새우</p>
+                <h2 class="jp-name">車海老</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/budouebi.png" alt="포도새우">
+                </div>
+                <p class="sub-name">포도새우</p>
+                <h2 class="jp-name">ブドウ海老</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/morotogeakaebi.png" alt="물렁가시붉은새우">
+                </div>
+                <p class="sub-name">물렁가시붉은새우(꽃새우)</p>
+                <h2 class="jp-name">モロトゲアカ海老</h2>
+            </div>
+            
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/siroebi.png" alt="흰돗대기새우">
+                </div>
+                <p class="sub-name">흰돗대기새우</p>
+                <h2 class="jp-name">白海老</h2>
+            </div> 
+
+<!-- 조개류 -->
+            <div class="grid-category" id="cat-kai">
+                <h2>貝類 <span>조개류</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/hotate.png" alt="가리비">
+                </div>
+                <p class="sub-name">가리비</p>
+                <h2 class="jp-name">帆立</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/akagai.png" alt="피조개">
+                </div>
+                <p class="sub-name">피조개</p>
+                <h2 class="jp-name">赤貝</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/tairagai.png" alt="키조개">
+                </div>
+                <p class="sub-name">키조개</p>
+                <h2 class="jp-name">平貝</h2>
+            </div>
+
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/torigai.png" alt="새조개">
+                </div>
+                <p class="sub-name">새조개</p>
+                <h2 class="jp-name">鳥貝</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/awabi.png" alt="전복">
+                </div>
+                <p class="sub-name">전복</p>
+                <h2 class="jp-name">アワビ</h2>
+            </div>            
+
+<!-- 연체동물  -->
+            <div class="grid-category" id="cat-nantai">
+                <h2>軟体動物 <span>연체동물</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/aoriika.png" alt="무늬오징어">
+                </div>
+                <p class="sub-name">무늬오징어</p>
+                <h2 class="jp-name">アオリイカ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/tako.png" alt="문어">
+                </div>
+                <p class="sub-name">문어</p>
+                <h2 class="jp-name">タコ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/geso.png" alt="오징어다리">
+                </div>
+                <p class="sub-name">오징어다리</p>
+                <h2 class="jp-name">ゲソ</h2>
+            </div>
+
+<!-- 알  -->
+            <div class="grid-category" id="cat-gyoran">
+                <h2>魚卵・白子 <span>알</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/uni.png" alt="성게알">
+                </div>
+                <p class="sub-name">성게알</p>
+                <h2 class="jp-name">雲丹</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/ikura.png" alt="연어알">
+                </div>
+                <p class="sub-name">연어알</p>
+                <h2 class="jp-name">いくら</h2>
+            </div>  
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/sirako.png" alt="이리">
+                </div>
+                <p class="sub-name">이리</p>
+                <h2 class="jp-name">白子</h2>
+            </div>   
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/kazunoko.png" alt="청어알">
+                </div>
+                <p class="sub-name">청어알</p>
+                <h2 class="jp-name">数の子</h2>
+            </div>
+          
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/karasumi.png" alt="숭어 어란">
+                </div>
+                <p class="sub-name">숭어 어란</p>
+                <h2 class="jp-name">カラスミ</h2>
+            </div>
+
+
+<!-- 기타  -->
+            <div class="grid-category" id="cat-sonota">
+                <h2>その他 <span>기타</span></h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/anago.png" alt="붕장어">
+                </div>
+                <p class="sub-name">붕장어</p>
+                <h2 class="jp-name">穴子</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/unagi.png" alt="민물장어">
+                </div>
+                <p class="sub-name">민물장어</p>
+                <h2 class="jp-name">うなぎ</h2>
+            </div>
+
+            <div class="sushi-item">
+                <div class="img-box">
+                    <img src="images/hamo.png" alt="갯장어">
+                </div>
+                <p class="sub-name">갯장어</p>
+                <h2 class="jp-name">ハモ</h2>
+            </div> 
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="#top" class="footer-logo">すし図鑑</a>
+                        <p class="footer-desc">본 도감은 계속 업데이트 됩니다.</p>
+                    </div>
+                    <nav class="footer-nav" aria-label="카테고리 바로가기">
+                        <h3>カテゴリー <span>카테고리</span></h3>
+                        <ul>
+                            <li><a href="#cat-akami">赤身 <span>붉은살</span></a></li>
+                            <li><a href="#cat-shiromi">白身 <span>흰살</span></a></li>
+                            <li><a href="#cat-hikari">光り物 <span>등푸른생선</span></a></li>
+                            <li><a href="#cat-ebi">海老 <span>새우</span></a></li>
+                            <li><a href="#cat-kai">貝類 <span>조개류</span></a></li>
+                            <li><a href="#cat-nantai">軟体動物 <span>연체동물</span></a></li>
+                            <li><a href="#cat-gyoran">魚卵・白子 <span>알</span></a></li>
+                            <li><a href="#cat-sonota">その他 <span>기타</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <p class="copyright">© 2026 すし図鑑 (Sushi Illustrated Dictionary). All Rights Reserved.</p>
+                        <p class="footer-note">* 맛 평가(별점)와 특징은 일반적인 정보를 바탕으로 정리한 참고용입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- 상세 모달 -->
+    <div class="modal-overlay" id="detailModal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-label="단새우 상세 정보">
+            <button type="button" class="modal-close" aria-label="닫기">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="detail-level">
+                <span class="level-label">난이도</span>
+                <i class="level-divider" aria-hidden="true"></i>
+                <span>초</span>
+                <span>중</span>
+                <span>상</span>
+            </div>
+
+            <div class="detail-title"></div>
+
+            <div class="detail-divider"></div>
+
+            <div class="detail-img">
+                <img src="" alt="">
+            </div>
+
+            <div class="detail-divider"></div>
+
+            <div class="detail-info">
+                <div class="detail-names">
+                    <h3 class="detail-kr"></h3>
+                    <p class="detail-reading"></p>
+                </div>
+                <p class="detail-desc"></p>
+            </div>
+
+            <div class="detail-table">
+                <div class="rating-row">
+                    <div class="rating-col">
+                        <div class="rating-item"><span class="r-label">단맛</span><span class="r-stars" data-k="sweet"></span></div>
+                        <div class="rating-item"><span class="r-label">향</span><span class="r-stars" data-k="aroma"></span></div>
+                    </div>
+                    <div class="rating-col">
+                        <div class="rating-item"><span class="r-label">감칠맛</span><span class="r-stars" data-k="umami"></span></div>
+                        <div class="rating-item"><span class="r-label">식감</span><span class="r-text" data-k="texture"></span></div>
+                    </div>
+                </div>
+                <div class="feature-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 검색 결과 없음 안내 -->
+    <div class="notice-overlay" id="searchNotice" aria-hidden="true">
+        <div class="notice-box" role="alertdialog" aria-label="검색 안내">
+            <p>검색 결과가 없습니다.</p>
+            <button type="button" class="notice-ok">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
