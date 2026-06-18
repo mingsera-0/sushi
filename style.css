@@ -1,0 +1,860 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+/* Pretendard 폰트 불러오기 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+body, h1, h2, h3, p, ol, ul { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    word-break: keep-all;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+    color: #111;
+    background-color: #fff;
+}
+
+/* 0. 내비게이션 바 (미니멀 · 스티키) */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #999;
+}
+.nav-inner {
+    width: 1300px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-brand {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: #111;
+    text-decoration: none;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+.nav-menu a {
+    position: relative;
+    display: inline-block;
+    padding: 12px 6px;          /* 마우스 올리는 영역을 위·아래·좌우로 넓힘 */
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.nav-menu a:hover {
+    color: #111;
+}
+/* 즉시 뜨는 커스텀 툴팁 (글자 바로 아래) */
+.nav-menu a::after {
+    content: attr(data-ko);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #999;
+    color: #111;
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 5px 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+    z-index: 200;
+}
+.nav-menu a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 앵커 이동 시 스티키 내비에 가리지 않도록 여백 확보 */
+#top,
+.grid-category {
+    scroll-margin-top: 88px;
+}
+
+@media (max-width: 1340px) {
+    .nav-inner {
+        width: auto;
+        padding: 0 24px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-inner {
+        height: 54px;
+        padding: 0 16px;
+    }
+    .nav-brand {
+        font-size: 1.05rem;
+    }
+    .nav-menu {
+        gap: 14px;
+    }
+    .nav-menu a {
+        font-size: 0.72rem;
+    }
+}
+
+/* 전체 콘텐츠 넓이 제한 */
+.contents {
+    width: 1300px;
+    margin: 0 auto;
+    padding: 60px 0 40px 0;
+}
+
+/* 1. 상단 헤더 영역 */
+.header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.title-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.title-box {
+    width: 660px;
+    height: 160px;
+    border: 1px solid #999;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-box h1 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+}
+
+.reading {
+    position: absolute;
+    bottom: -30px; 
+    display: flex;
+    gap: 75px;
+}
+
+.reading span {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #999;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* 2. 검색창 영역 */
+.search-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.search-box {
+    width: 320px;
+    height: 48px;
+    border: 1px solid #777;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #fff;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: "Pretendard", sans-serif;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. 스시 리스트 (CSS Grid 사용) */
+.sushi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 6에서 5로 변경 */
+    gap: 30px 20px; 
+}
+
+/* 카테고리 구분 레이아웃 */
+.grid-category {
+    grid-column: span 5; /* 6에서 5로 변경 (5열 전체를 차지하도록) */
+    border-bottom: 1px solid #999; 
+    padding-bottom: 6px;
+    margin-top: 35px;
+    margin-bottom: 12px;
+}
+
+/* 첫 번째 카테고리는 상단 여백 제거 */
+.sushi-grid > .grid-category:first-child {
+    margin-top: 20px;
+}
+
+/* 카테고리 일본어 */
+.grid-category h2 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.9rem; /* 크기를 살짝 더 미니멀하게 */
+    font-weight: 400;
+    color: #111; /* 톤을 낮춰 글씨가 팍 튀지 않게 조정 */
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 카테고리 한국어 */
+.grid-category h2 span {
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #777; /* 아주 연한 회색으로 처리하여 한눈에 띄지 않게 함 */
+    letter-spacing: 0;
+}
+
+/* 검색 결과 헤더: 한국어 문구만 사용 */
+.search-result-cat h2 {
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0;
+}
+
+/* 개별 아이템 디자인 */
+.sushi-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.sushi-item .img-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #999;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.sushi-item .img-box img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.sushi-item .sub-name {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: 200;
+}
+
+.sushi-item .jp-name {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #111;
+}
+.sushi-item .jp-name .jp-read {
+    display: block;
+    margin-top: 5px;
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.08em;
+}
+
+.footer {
+    margin-top: 110px;
+    background-color: #1a1a1a;
+    border: 1px solid #111;
+}
+.footer-inner {
+    padding: 38px 48px 24px;
+}
+
+/* 상단: 브랜드 + 카테고리 */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    padding-bottom: 24px;
+}
+.footer-brand {
+    max-width: 420px;
+}
+.footer-logo {
+    display: inline-block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: #b5b5b5;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+.footer-desc {
+    font-size: 0.76rem;
+    font-weight: 200;
+    line-height: 1.7;
+    color: #777;
+}
+.footer-nav h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+}
+.footer-nav h3 span {
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.66rem;
+    font-weight: 200;
+    color: #666;
+}
+.footer-nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, auto);   /* 4열 × 2줄 → 세로 낮게 */
+    column-gap: 30px;
+    row-gap: 10px;
+}
+.footer-nav a {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #8f8f8f;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.footer-nav a span {
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.66rem;
+    font-weight: 200;
+    color: #5e5e5e;
+    transition: color 0.15s ease;
+}
+.footer-nav a:hover {
+    color: #ddd;
+}
+.footer-nav a:hover span {
+    color: #888;
+}
+
+/* 하단: 저작권 */
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #2c2c2c;
+}
+.footer-legal .copyright {
+    font-size: 0.7rem;
+    font-weight: 200;
+    color: #707070;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+.footer-legal .footer-note {
+    font-size: 0.66rem;
+    font-weight: 200;
+    color: #5c5c5c;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        padding: 32px 24px 22px;
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 28px;
+        padding-bottom: 22px;
+    }
+    .footer-nav ul {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+/* ===== 클릭 가능한 아이템 ===== */
+.sushi-item.is-clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.sushi-item.is-clickable .img-box {
+    transition: box-shadow 0.2s ease;
+}
+.sushi-item.is-clickable:hover {
+    transform: translateY(-4px);
+}
+.sushi-item.is-clickable:hover .img-box {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+}
+.sushi-item.is-clickable:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 4px;
+}
+
+/* ===== 상세 모달 ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 740px;
+    background: #fff;
+    border: 1px solid #999;
+    padding: 40px 46px 77px 46px;
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay.is-open .modal-box {
+    transform: translateY(0);
+}
+
+/* 닫기(X) 버튼 */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+.modal-close:hover {
+    color: #111;
+}
+
+/* 본문 좌측 들여쓰기 (구분선/이미지는 더 넓게) */
+.detail-level,
+.detail-title,
+.detail-info {
+    padding-left: 64px;
+}
+
+/* 난이도 표시 (초/중/상) */
+.detail-level {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 20px;
+}
+.detail-level span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #bbb;
+}
+.detail-level span.active {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-weight: 500;
+}
+.detail-level .level-label {
+    font-family: "Pretendard", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 0.02em;
+    margin-right: 6px;
+}
+.detail-level .level-divider {
+    width: 1px;
+    height: 18px;
+    background: #d6d6d6;
+}
+
+/* 제목 (가나 + 한자 박스) */
+.detail-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 26px;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #111;
+}
+.detail-title .kana {
+    font-size: 3.4rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-right: 12px;
+}
+.detail-title .bracket {
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+.detail-title .kanji {
+    width: 62px;
+    height: 62px;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.1rem;
+    font-weight: 500;
+}
+
+/* 구분선 */
+.detail-divider {
+    border-bottom: 1px solid #999;
+}
+
+/* 이미지 */
+.detail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.detail-img img {
+    width: 100%;
+    max-width: 600px;        /* 창을 키우기 전 크기로 고정 */
+    height: auto;
+    object-fit: contain;
+}
+
+/* 하단 정보 */
+.detail-info {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+.detail-names {
+    flex: 0 0 168px;
+}
+.detail-kr {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 14px;
+}
+.detail-reading {
+    display: flex;
+    gap: 18px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #555;
+}
+.detail-desc {
+    flex: 1;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+}
+.detail-desc b {
+    font-weight: 900;
+    color: #111;
+    font-family: "Noto Serif KR", serif;
+}
+
+/* ===== 하단 표 (등급 + 특징) ===== */
+.detail-table {
+    margin: 40px 0 0 64px;       /* 좌측 들여쓰기를 본문과 맞춤 */
+    border: 1px solid #999;
+    color: #111;
+}
+
+/* 등급 영역 */
+.rating-row {
+    display: flex;
+    border-bottom: 1px solid #999;
+}
+.rating-col {
+    flex: 1;
+    padding: 22px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.rating-item {
+    display: flex;
+    align-items: center;
+}
+.r-label {
+    width: 76px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #111;
+    font-family: "Noto Serif KR", serif;
+}
+.r-stars {
+    font-size: 1.05rem;
+    letter-spacing: 5px;
+    color: #111;
+}
+.r-text {
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: #111;
+    font-family: "Noto Serif KR", serif;
+}
+
+/* 특징 그리드 (2 x 2) */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.feature-cell {
+    padding: 22px 30px 18px;
+    min-height: 110px;
+}
+/* 가운데 세로선: 왼쪽 칸(홀수번째)에 오른쪽 테두리 (2칸·4칸 공통) */
+.feature-cell:nth-child(odd) {
+    border-right: 1px solid #999;
+}
+/* 가운데 가로선: 4칸일 때 첫 줄(1·2번 칸) 아래 테두리 */
+.feature-grid.feat-4 .feature-cell:nth-child(-n+2) {
+    border-bottom: 1px solid #999;
+}
+.f-num {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 12px;
+}
+.feature-cell p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* 반응형 */
+@media (max-width: 680px) {
+    .modal-box {
+        padding: 36px 20px 32px;
+    }
+    .detail-level,
+    .detail-title,
+    .detail-info {
+        padding-left: 24px;
+    }
+    .detail-title .kana,
+    .detail-title .bracket {
+        font-size: 2.2rem;
+    }
+    .detail-title .kanji {
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+    }
+    .detail-info {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .detail-names {
+        flex: none;
+    }
+    .detail-img img {
+        max-width: 78%;
+    }
+    .detail-table {
+        margin-left: 24px;
+    }
+    .rating-col {
+        padding: 16px 18px;
+        gap: 10px;
+    }
+    .r-label {
+        width: 64px;
+    }
+    .feature-cell {
+        padding: 16px 18px;
+        min-height: 90px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-overlay,
+    .modal-box,
+    .notice-overlay,
+    .sushi-item.is-clickable {
+        transition: none;
+    }
+}
+
+/* ===== 검색 결과 없음 안내창 ===== */
+.notice-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.notice-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.notice-box {
+    background: #fff;
+    border: 1px solid #999;
+    padding: 38px 44px 28px;
+    text-align: center;
+    min-width: 280px;
+    max-width: 90%;
+}
+.notice-box p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 24px;
+}
+.notice-ok {
+    border: 1px solid #111;
+    background: #fff;
+    color: #111;
+    padding: 9px 30px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.notice-ok:hover {
+    background: #111;
+    color: #fff;
+}
